@@ -1,0 +1,9 @@
+@import "~@/lib/reset.scss";
+
+.mint-cell{
+    @include border(0 0 1px 0, #ccc, solid);
+}
+
+.registerBtn{
+    margin-top: 20px;
+}

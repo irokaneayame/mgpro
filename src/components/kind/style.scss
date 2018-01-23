@@ -1,1 +1,71 @@
 @import "~@/lib/reset.scss";
+
+ .bounce-enter-active {
+  animation: slideInRight 1s;
+}
+//.bounce-leave-active {
+//animation: slideOutLeft .1s both;
+//}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    visibility: hidden;
+    -webkit-transform: translate3d(-300%, 0, 0);
+    transform: translate3d(-300%, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(300%, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.router-link-active{
+    @include background-color(#eee);
+    @include text-color(#f66);
+}
+
+.content{
+    @include flexbox();
+    
+    aside{
+        @include rect(100px, 100%);
+//      @include background-color(#0f0);
+        @include border(0 1px 0 0, #666);
+        
+        ul{
+            
+            li{
+                @include rect(100%, 0.36rem);
+                @include border(0 0 1px 0, #666);
+                @include line-height(0.36rem);
+                @include text-align();
+            }
+        }
+        
+    }
+    section{
+          @include flex();
+//        @include background-color(#ccc);
+    }
+}

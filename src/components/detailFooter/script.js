@@ -1,24 +1,23 @@
-import axios from 'axios'
 
 export default {
   data(){
-  	return{
-  		
-  	}
+    return {
+      
+    }
   },
-  mounted(){ 
-  	
+  mounted(){
+    
   },
   methods:{
-  	
+    
   },
   computed:{
-  	
+    
   },
   components:{
     
   },
   watch:{
-  	
+    
   }
 }

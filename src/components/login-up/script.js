@@ -8,7 +8,9 @@ export default {
 
 	},
 	methods: {
-
+		changeUrl(url) {
+			this.$router.push('/user/' + url)
+		}
 	},
 	computed: {
 

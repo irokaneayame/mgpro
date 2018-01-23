@@ -1,10 +1,7 @@
 <template>
-	<transition name="bounce">
-		<div class="content">
-			<ul>
-			</ul>
-		</div>
-	</transition>
+	<div class="content">
+		显示登录后的信息
+	</div>
 </template>
 <script src="./script.js"></script>
 <style lang="scss" src="./style.scss"></style>

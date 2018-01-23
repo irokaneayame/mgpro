@@ -1,10 +1,9 @@
 <template>
-	<transition name="bounce">
-		<div class="content">
-			<ul>
-			</ul>
-		</div>
-	</transition>
+  <footer>
+    <ul>
+      <li>加入购物车</li>
+    </ul>
+  </footer>
 </template>
 <script src="./script.js"></script>
 <style lang="scss" src="./style.scss"></style>

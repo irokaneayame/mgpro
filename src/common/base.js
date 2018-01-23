@@ -1,1 +1,1 @@
-const BASE_URL from 'http://localhost/'
+export const BASE_URL = 'http://10.8.158.50:3000'
