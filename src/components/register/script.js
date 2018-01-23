@@ -57,8 +57,6 @@ export default {
 				}
 				num--;
 			}, 1000)
-			//向后端请求数据
-
 		},
 		register() {
 			var that = this;
@@ -75,20 +73,23 @@ export default {
 							duration: 2000
 						});
 					} else {
-						//提交数据到服务器，进行验证
 						var url = BASE_URL + "/api/register"
 						axios.post(url, {
-							params: {
-								phone: that.phone,
-								password: that.password
-							}
+							phone: that.phone,
+							password: that.password
 						}).then((response) => {
-							if(response == 0) {
-								console.log('用户名已存在')
-							} else {
-								console.log('注册成功')
+							switch(response.data) {
+								case 0:
+									console.log('用户名已重复')
+									that.phoneState = "error"
+									break;
+								case 1:
+									console.log('注册成功')
+									break;
+								default:
+									console.log('注册失败')
+									that.phoneState = "error"
 							}
-							console.log(response)
 						}).catch((error) => {
 							console.log(error)
 						})

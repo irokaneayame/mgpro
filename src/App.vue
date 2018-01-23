@@ -42,8 +42,12 @@
 				li {
 					@include flex();
 					@include flexbox();
+					@include flex-direction(column);
 					@include justify-content();
 					@include align-items();
+					svg {
+						@include font-size(0.2rem);
+					}
 				}
 			}
 		}

@@ -1,71 +1,100 @@
 @import "~@/lib/reset.scss";
-
- .bounce-enter-active {
-  animation: slideInRight 1s;
+.bounce-enter-active {
+    animation: slideInRight 1s;
 }
-//.bounce-leave-active {
-//animation: slideOutLeft .1s both;
-//}
+
 @keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
+
 @keyframes slideOutLeft {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    visibility: hidden;
-    -webkit-transform: translate3d(-300%, 0, 0);
-    transform: translate3d(-300%, 0, 0);
-  }
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        visibility: hidden;
+        -webkit-transform: translate3d(-300%, 0, 0);
+        transform: translate3d(-300%, 0, 0);
+    }
 }
+
 @keyframes slideInRight {
-  0% {
-    transform: translate3d(300%, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(300%, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.router-link-active{
+.router-link-active {
     @include background-color(#eee);
     @include text-color(#f66);
 }
 
-.content{
-    @include flexbox();
-    
-    aside{
-        @include rect(100px, 100%);
-//      @include background-color(#0f0);
-        @include border(0 1px 0 0, #666);
-        
-        ul{
-            
-            li{
-                @include rect(100%, 0.36rem);
-                @include border(0 0 1px 0, #666);
-                @include line-height(0.36rem);
-                @include text-align();
+.content {
+    @include overflow(hidden) section {
+        @include rect(100%, 100%);
+        padding: 0.1rem;
+        @include overflow(hidden) ul {
+            @include rect(100%, 100%);
+            @include overflow(scroll) border: solid 1px #666;
+            li {
+                @include flexbox();
+                margin-bottom: 0.2rem;
+                padding: 0 0.1rem;
+                img {
+                    @include rect(0.8rem, 0.8rem);
+                }
+                div {
+                    @include flex();
+                    @include rect(100%, auto);
+                    h1 {
+                        @include line-height(0.5rem);
+                        @include font-size(0.2rem);
+                        text-indent: 0.05rem;
+                    }
+                    p {
+                        @include text-color(#666);
+                        @include font-size(0.12rem);
+                        @include line-height(0.3rem);
+                        span {
+                            @include border(0 0 0 1px, #333);
+                            padding: 0 5px;
+                            &:first-child {
+                                @include border(0, #fff);
+                            }
+                        }
+                    }
+                }
+                &:first-child {
+                    margin-top: 0.2rem;
+                }
+                >p {
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include justify-content(space-around);
+                    em {
+                        display: block;
+                        margin-top: 0.1rem;
+                        @include border-radius(0.06rem);
+                        @include text-align();
+                        @include rect(0.6rem, 0.3rem);
+                        @include line-height(0.3rem);
+                        @include background-color(#ccc);
+                    }
+                }
             }
         }
-        
-    }
-    section{
-          @include flex();
-//        @include background-color(#ccc);
     }
 }
