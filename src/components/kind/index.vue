@@ -1,20 +1,22 @@
 <template>
 	<transition name="bounce">
 		<div class="content">
+			<p><span>推荐</span><span>排行</span></p>
 			<section>
 				<ul>
 					<li v-for="(item,index) in list" :key="index">
 						<img :src="item.ICON_URL" />
 						<div>
 							<h1>{{item.NAME}}</h1>
-							<p><span>{{config.arr_type[item.TYPE-1].text}}</span><span>{{item.PACK_SIZE}}M</span><span>{{item.DL_NUM}}万次下载</span></p>
+							<p><span>{{item.DESCRI}}</span></p>
 						</div>
-						<p><em @click='download(item.DL)'>下载</em><em>礼包</em></p>
+						<a :href="item.DL">下载</a>
 					</li>
 				</ul>
+				<div>查看更多</div>
 			</section>
 		</div>
 	</transition>
 </template>
 <script src="./script.js"></script>
-<style lang="scss" src="./style.scss"></style>
+<style scoped lang="scss" src="./style.scss"></style>

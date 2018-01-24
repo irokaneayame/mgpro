@@ -17,6 +17,7 @@ import LoginUp from "@/components/login-up"
 import LoginIn from "@/components/login-in"
 import Register from "@/components/register"
 import Login from "@/components/login"
+
 export default new Router({
 	routes: [{
 			path: "/",

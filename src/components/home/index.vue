@@ -1,8 +1,8 @@
 <template>
 	<transition name="bounce">
 		<div class="content">
-			<ul>
-			</ul>
+			<v-banner></v-banner>
+			<v-new></v-new>
 		</div>
 	</transition>
 </template>

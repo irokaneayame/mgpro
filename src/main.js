@@ -7,8 +7,7 @@ import Es6Promise from 'es6-promise'
 import FastClick from 'fastclick'
 Es6Promise.polyfill()
 FastClick.attach(document.body)
-Vue.config.productionTip = false
-
+Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',

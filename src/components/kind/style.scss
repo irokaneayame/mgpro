@@ -3,58 +3,54 @@
     animation: slideInRight 1s;
 }
 
-@keyframes bounce-in {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes slideOutLeft {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        visibility: hidden;
-        -webkit-transform: translate3d(-300%, 0, 0);
-        transform: translate3d(-300%, 0, 0);
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        transform: translate3d(300%, 0, 0);
-        visibility: visible;
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
 .router-link-active {
     @include background-color(#eee);
     @include text-color(#f66);
 }
 
 .content {
-    @include overflow(hidden) section {
+    @include overflow(hidden);
+    
+    >p{
+        @include rect(auto,0.36rem);
+        @include flexbox();
+        @include align-items(center);
+        @include background-color(#fff);
+        span{
+            @include flex();
+            text-align: center;
+            border-right: 1px solid #d4d4d4;
+            &:last-child{
+                border: 0;
+            }
+        }
+    }
+    section {
+        padding: 0.06rem;
         @include rect(100%, 100%);
-        padding: 0.1rem;
-        @include overflow(hidden) ul {
-            @include rect(100%, 100%);
-            @include overflow(scroll) border: solid 1px #666;
+        @include overflow(scroll);
+        >div{
+            text-align: center;
+            @include rect(100%,0.6rem);
+            @include line-height(0.6rem);
+            @include text-color(#666)
+        }
+        ul {
+            @include rect(100%, auto);
+            border: solid 1px #d4d4d4;
+            padding: 0 0.06rem;
+            @include background-color(#fff);
             li {
                 @include flexbox();
-                margin-bottom: 0.2rem;
                 padding: 0 0.1rem;
+                @include rect(100%,0.88rem)
+                @include align-items(center);
+                border-bottom: solid 1px #d4d4d4;
+                &:last-child{
+                    border: 0;
+                }
                 img {
-                    @include rect(0.8rem, 0.8rem);
+                    @include rect(0.6rem, 0.6rem);
                 }
                 div {
                     @include flex();
@@ -77,22 +73,13 @@
                         }
                     }
                 }
-                &:first-child {
-                    margin-top: 0.2rem;
-                }
-                >p {
-                    @include flexbox();
-                    @include flex-direction(column);
-                    @include justify-content(space-around);
-                    em {
-                        display: block;
-                        margin-top: 0.1rem;
-                        @include border-radius(0.06rem);
-                        @include text-align();
-                        @include rect(0.6rem, 0.3rem);
-                        @include line-height(0.3rem);
-                        @include background-color(#ccc);
-                    }
+                a {
+                    display: block;
+                    @include rect(0.74rem, 0.3rem);
+                    @include background-color(#81cd65);
+                    @include text-color(#fff);
+                    text-align: center;
+                    @include line-height(0.3rem);
                 }
             }
         }

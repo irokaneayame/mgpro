@@ -1,0 +1,127 @@
+@import "~@/lib/reset.scss";
+.router-link-active {
+    @include text-color(#f66);
+}
+
+.new {
+    padding: 0.06rem;
+    @include flexbox();
+    @include flex-direction(column);
+    figure {
+        @include background-color(#fff);
+        @include rect(100%, auto);
+        border: 1px solid #d4d4d4;
+        figcaption {
+            @include rect(100%, 0.3rem);
+            @include line-height(0.3rem);
+            @include flexbox();
+            @include justify-content(space-between);
+            border-bottom: 1px solid #d4d4d4;
+            span {
+                text-align: center;
+            }
+        }
+        ul {
+            @include flexbox();
+            @include rect(100%, auto);
+            @include flex-wrap(wrap);
+            padding: 0.06rem;
+            li {
+                @include rect(50%, auto) @include flexbox();
+                @include font-size(0.12rem);
+                border-top: 1px solid #d4d4d4;
+                border-right: 1px solid #d4d4d4;
+                padding: 0.06rem 0;
+                img {
+                    margin: 0 0.06rem;
+                    @include rect(0.6rem, 0.6rem)
+                }
+                div {
+                    @include flex();
+                    p {
+                        &:first-child {}
+                        &:last-child {
+                            @include text-color(#999)
+                        }
+                    }
+                }
+                &:nth-child(2n) {
+                    border-right: 0;
+                }
+                &:nth-child(1),
+                &:nth-child(2) {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+    .game {
+        @include rect(100%, auto);
+        border: 1px solid #d4d4d4;
+        margin-top: 0.06rem;
+        margin-bottom: 0.2rem;
+        @include background-color(#fff);
+        .tab {
+            @include rect(100%, 0.4rem);
+            @include flexbox();
+            @include align-items();
+            span{
+                @include flex();
+                text-align: center;
+                border-right: solid 1px #d4d4d4;
+                @include rect(auto,0.24rem)
+                @include line-height(0.24rem);
+                &:last-child{
+                    bottom: 0;
+                }
+            }
+        }
+        table {
+            @include rect(100%, auto);
+            @include font-size(0.12rem);
+            th {
+                @include rect(100%, 0.4rem);
+                @include flexbox();
+                @include line-height(0.4rem);
+                text-align: center;
+                border-top: solid 1px #d4d4d4;
+                @include text-color(#656565);
+                @include background-color(#d5d5d5);
+                td {
+                    &:first-child {
+                        @include flex();
+                    }
+                    &:nth-child(2) {
+                        padding: 0 14px;
+                    }
+                    &:nth-child(3) {
+                        padding: 0 14px;
+                    }
+                    &:last-child {
+                        padding: 0 14px;
+                    }
+                }
+            }
+            tr {
+                @include rect(100%, 0.4rem);
+                @include flexbox();
+                @include line-height(0.4rem);
+                td {
+                    border-top: 1px solid #d4d4d4;
+                    &:first-child {
+                        @include flex();
+                    }
+                    &:nth-child(2) {
+                        padding: 0 14px;
+                    }
+                    &:nth-child(3) {
+                        padding: 0 14px;
+                    }
+                    &:last-child {
+                        padding: 0 14px;
+                    }
+                }
+            }
+        }
+    }
+}

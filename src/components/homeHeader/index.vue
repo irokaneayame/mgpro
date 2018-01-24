@@ -1,6 +1,6 @@
 <template>
   <header >
-        首页头部
+        游戏中心
   </header>
 </template>
 <script src="./script.js"></script>

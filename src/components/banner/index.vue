@@ -1,8 +1,7 @@
 <template>
-	<header>
-			全部游戏
-	</header>
-	
+  <div class="banner" >
+  	123
+  </div>
 </template>
 <script src="./script.js"></script>
 <style lang="scss" src="./style.scss"></style>

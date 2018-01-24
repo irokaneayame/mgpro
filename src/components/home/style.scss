@@ -1,5 +1,18 @@
 @import "~@/lib/reset.scss";
-
-.router-link-active{
+.router-link-active {
     @include text-color(#f66);
+}
+
+.content {
+    @include flexbox();
+    @include flex-direction(column);
+    @include overflow(auto);
+    @include background-color(#f4f4f4);
+    .banner {
+        @include rect(100%, 1rem)
+    }
+    .new {
+        @include flex();
+        @include rect(100%, 100%);
+    }
 }

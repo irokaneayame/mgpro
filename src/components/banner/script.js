@@ -1,9 +1,7 @@
-import Banner from "@/components/banner"
-import New from "@/components/new"
 export default {
 	data() {
 		return {
-
+			 
 		}
 	},
 	mounted() {},
@@ -17,8 +15,7 @@ export default {
 
 	},
 	components: {
-		'v-banner': Banner,
-		'v-new': New
+		
 	},
 	watch: {
 

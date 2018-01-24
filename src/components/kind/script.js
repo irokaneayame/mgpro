@@ -22,9 +22,7 @@ export default {
 		})
 	},
 	methods: {
-		download(url) {
-			window.open(url)
-		}
+		 
 	},
 	computed: {
 		getType(data) {

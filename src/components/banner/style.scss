@@ -1,0 +1,9 @@
+@import "~@/lib/reset.scss";
+
+.router-link-active{
+    @include text-color(#f66);
+}
+.banner{
+    @include rect(100%,1rem);
+    @include border(1px,#666)
+}
