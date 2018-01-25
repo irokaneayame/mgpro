@@ -1,5 +1,22 @@
 @import "~@/lib/reset.scss";
-
-.router-link-active{
+.router-link-active {
     @include text-color(#f66);
+}
+
+header {
+    .gong {
+        @include text-color(#FB9143);
+        position: relative;
+        @include flexbox();
+        @include justify-content();
+        @include align-items();
+        .iconfont {
+            @include font-size(0.36rem);
+            margin: 0 0.04rem;
+        }
+        .icon-wo {
+            @include text-color(#FB9143);
+            @include font-size(0.28rem)
+        }
+    }
 }

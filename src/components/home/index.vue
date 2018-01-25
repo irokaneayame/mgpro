@@ -1,10 +1,8 @@
 <template>
-	<transition name="bounce">
-		<div class="content">
-			<v-banner></v-banner>
-			<v-new></v-new>
-		</div>
-	</transition>
+	<div class="content">
+		<v-banner></v-banner>
+		<v-new></v-new>
+	</div>
 </template>
 <script src="./script.js"></script>
 <style lang="scss" src="./style.scss"></style>

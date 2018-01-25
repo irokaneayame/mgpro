@@ -1,0 +1,90 @@
+@import "~@/lib/reset.scss";
+.router-link-active {
+    @include background-color(#eee);
+    @include text-color(#f66);
+}
+
+.content {
+    @include overflow(hidden);
+    @include flexbox();
+    @include flex-direction(column);
+    >p {
+        @include rect(auto, 0.36rem);
+        @include flexbox();
+        @include align-items(center);
+        @include background-color(#fff);
+        span {
+            @include flex();
+            text-align: center;
+            border-right: 1px solid #d4d4d4;
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+    section {
+        padding: 0.06rem;
+        @include flex();
+        @include rect(100%, auto);
+        @include overflow(scroll);
+        >div {
+            text-align: center;
+            @include rect(100%, 0.6rem);
+            @include line-height(0.6rem);
+            @include text-color(#666)
+        }
+        ul {
+            @include rect(100%, auto);
+            border: solid 1px #d4d4d4;
+            padding: 0 0.06rem;
+            @include background-color(#fff);
+            li {
+                @include flexbox();
+                @include rect(100%, 0.88rem) @include align-items(center);
+                border-bottom: solid 1px #d4d4d4;
+                &:last-child {
+                    border: 0;
+                }
+                img {
+                    @include rect(0.6rem, 0.6rem);
+                    margin-right: 0.1rem;
+                }
+                div {
+                    @include flex();
+                    @include rect(100%, auto);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    h1 {
+                        @include font-size(0.14rem);
+                        font-weight: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        @include text-color(#333);
+                    }
+                    p {
+                        @include font-size(0.06rem);
+                        @include text-color(#999);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        span{
+                            @include text-color(#F6625F);
+                            padding: 0.06rem;
+                        }
+                    }
+                }
+                a {
+                    display: block;
+                    @include rect(0.74rem, 0.3rem);
+                    @include background-color(#81cd65);
+                    @include text-color(#fff);
+                    text-align: center;
+                    margin: 0 0.06rem 0 0.16rem;
+                    @include line-height(0.3rem);
+                }
+            }
+        }
+    }
+}

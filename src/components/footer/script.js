@@ -1,28 +1,42 @@
-
 export default {
-  data(){
-    return {
-      list:[
-        {path:"/home",name:"首页",icon:"#icon-jingxuan"},
-        {path:"/kind",name:"分类",icon:"#icon-gengduo"},
-        {path:"/cart",name:"购物车",icon:"#icon-liwuheji"},
-        {path:"/user",name:"我的",icon:"#icon-wo"}
-      ]
-    }
-  },
-  mounted(){
-    
-  },
-  methods:{
-    
-  },
-  computed:{
-    
-  },
-  components:{
-    
-  },
-  watch:{
-    
-  }
+	data() {
+		return {
+			list: [{
+					path: "/home",
+					name: "首页",
+					icon: "icon-shouye"
+				},
+				{
+					path: "/kind",
+					name: "游戏",
+					icon: "icon-94"
+				},
+				{
+					path: "/gift",
+					name: "礼物",
+					icon: "icon-gifs"
+				},
+				{
+					path: "/user",
+					name: "我的",
+					icon: "icon-wo"
+				}
+			]
+		}
+	},
+	mounted() {
+
+	},
+	methods: {
+
+	},
+	computed: {
+
+	},
+	components: {
+
+	},
+	watch: {
+
+	}
 }

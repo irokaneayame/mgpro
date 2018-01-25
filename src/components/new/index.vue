@@ -2,37 +2,118 @@
 	<div class="new">
 		<figure>
 			<figcaption><span>今日推荐</span><span class='more'>查看全部></span></figcaption>
-			<ul>
-				<li>
-					<img src="./1.jpg" />
-					<div>
-						<p>元气战姬少女</p>
-						<p>二次元手游</p>
-					</div>
-				</li>
-				<li>
-					<img src="./1.jpg" />
-					<div>
-						<p>元气战姬少女</p>
-						<p>二次元手游</p>
-					</div>
-				</li>
-				<li>
-					<img src="./1.jpg" />
-					<div>
-						<p>元气战姬少女</p>
-						<p>二次元手游</p>
-					</div>
-				</li>
-				<li>
-					<img src="./1.jpg" />
-					<div>
-						<p>元气战姬少女</p>
-						<p>二次元手游</p>
-					</div>
-				</li>
-			</ul>
 		</figure>
+		<mt-swipe :auto="4000">
+			<mt-swipe-item>
+				<ul>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+				</ul>
+			</mt-swipe-item>
+			<mt-swipe-item>
+				<ul>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+				</ul>
+			</mt-swipe-item>
+			<mt-swipe-item>
+				<ul>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png"/>
+							<p>二次元手游</p>
+						</div>
+					</li>
+				</ul>
+			</mt-swipe-item>
+		</mt-swipe>
+
 		<div class='game'>
 			<p class='tab'><span @click="change('kai')">开服表</span><span @click="change('xin')">新游榜</span></p>
 			<table v-if="tem == 'kai'">

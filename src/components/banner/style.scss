@@ -1,9 +1,18 @@
 @import "~@/lib/reset.scss";
-
-.router-link-active{
-    @include text-color(#f66);
-}
-.banner{
-    @include rect(100%,1rem);
-    @include border(1px,#666)
+.banner {
+    @include rect(100%, 1rem);
+    @include border(1px, #666);
+    @include background-color(#ccc);
+    .mint-swipe-indicators {
+        bottom: 0;
+        left: auto;
+        right: 0;
+        .mint-swipe-indicator {
+            opacity: 1;
+            @include background-color(#B1B1B1);
+        }
+        .is-active {
+            @include background-color(#FE5306);
+        }
+    }
 }

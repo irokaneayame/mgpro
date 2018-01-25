@@ -12,7 +12,7 @@ export default {
 		if(localStorage.getItem("username")) {
 			this.$router.push("/user/login-in")
 		} else {
-			this.$router.push("/user/login-up")
+			this.$router.push("/user/login")
 		}
 	},
 	methods: {

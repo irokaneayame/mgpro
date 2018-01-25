@@ -1,0 +1,11 @@
+@import "~@/lib/reset.scss";
+.router-link-active {
+    @include text-color(#f66);
+}
+
+header {
+    img {
+        @include rect(1.2rem, auto);
+        margin-left: 0.2rem;
+    }
+}

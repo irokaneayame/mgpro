@@ -2,9 +2,7 @@
 	<footer>
 		<ul>
 			<router-link tag="li" v-for="(item, index) in list" :to="item.path" :key="index">
-				<svg class="icon" aria-hidden="true">
-					<use :xlink:href="item.icon"></use>
-				</svg>
+				<i class='iconfont' :class='item.icon'></i>
 				<p>{{item.name}}</p>
 			</router-link>
 		</ul>

@@ -10,26 +10,60 @@
 
 .content {
     @include overflow(hidden);
-    
-    >p{
-        @include rect(auto,0.36rem);
-        @include flexbox();
-        @include align-items(center);
-        @include background-color(#fff);
-        span{
-            @include flex();
-            text-align: center;
-            border-right: 1px solid #d4d4d4;
-            &:last-child{
+    @include flexbox();
+    @include flex-direction(column);
+    .search-wrap{
+        .search-bg{
+            margin: 0.05rem 0.2rem;
+            @include background-color(#ffffff);
+            @include border-radius(0.1rem);
+            @include overflow(hidden);
+            @include line-height(0.2rem);
+            padding: 0.03rem;         
+            i{
+                float: left;
+            }
+            input{
                 border: 0;
+                margin-left: 0.2rem;
+                float: left;
+                &:focus+b{
+                    display: block;
+                }
+            }
+            b{
+                display: none;
+                @include link();
+                font-weight: inherit;
+                margin-right: 0.2rem;
+                float: right;
+            }
+        }
+        
+        p{
+            @include rect(auto,0.36rem);
+            @include flexbox();
+            @include align-items(center);
+            @include background-color(#f4f4f4);
+            button{
+                margin: 0 0.03rem;
+                height: 100%;
+                @include flex();
+                text-align: center;
+                border-right: 1px solid #d4d4d4;
+                &:last-child{
+                    border: 0;
+                    color: #fff;
+                }
             }
         }
     }
     section {
+        @include flex();
         padding: 0.06rem;
-        @include rect(100%, 100%);
+        @include rect(100%, auto);
         @include overflow(scroll);
-        >div{
+        .more{
             text-align: center;
             @include rect(100%,0.6rem);
             @include line-height(0.6rem);
@@ -59,11 +93,14 @@
                         @include line-height(0.5rem);
                         @include font-size(0.2rem);
                         text-indent: 0.05rem;
+                        @include ellipsis(1.8rem,1)
                     }
                     p {
                         @include text-color(#666);
                         @include font-size(0.12rem);
                         @include line-height(0.3rem);
+                        width: 3rem;
+                        @include ellipsis(1.8rem,1)
                         span {
                             @include border(0 0 0 1px, #333);
                             padding: 0 5px;

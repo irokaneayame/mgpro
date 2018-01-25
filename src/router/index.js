@@ -5,19 +5,16 @@ Vue.use(Router)
 
 import Home from "@/components/home"
 import Kind from "@/components/kind"
-import Cart from "@/components/cart"
+import Gift from "@/components/gift"
 import User from "@/components/user"
-import HomeHeader from "@/components/homeHeader"
-import KindHeader from "@/components/kindHeader"
-import CartHeader from "@/components/cartHeader"
-import UserHeader from "@/components/userHeader"
+import Header from "@/components/header"
 import Footer from "@/components/footer"
+import UserHeader from "@/components/userHeader"
 import DetailFooter from "@/components/detailFooter"
-import LoginUp from "@/components/login-up"
 import LoginIn from "@/components/login-in"
 import Register from "@/components/register"
 import Login from "@/components/login"
-
+import LoginHeader from "@/components/loginHeader"
 export default new Router({
 	routes: [{
 			path: "/",
@@ -31,7 +28,7 @@ export default new Router({
 			path: '/home',
 			name: 'home',
 			components: {
-				header: HomeHeader,
+				header: Header,
 				content: Home,
 				footer: Footer
 			}
@@ -40,7 +37,7 @@ export default new Router({
 			path: '/kind',
 			name: 'kind',
 			components: {
-				header: KindHeader,
+				header: Header,
 				content: Kind,
 				footer: Footer
 			}
@@ -49,7 +46,7 @@ export default new Router({
 			path: '/kindlist/:classID',
 			name: 'kindlist',
 			components: {
-				header: KindHeader,
+				header: Header,
 				content: Kind,
 				footer: Footer
 			},
@@ -60,36 +57,40 @@ export default new Router({
 			}
 		},
 		{
-			path: '/cart',
-			name: 'cart',
+			path: '/gift',
+			name: 'gift',
 			components: {
-				header: CartHeader,
-				content: Cart,
+				header: Header,
+				content: Gift,
 				footer: Footer
 			}
+
 		},
 		{
 			path: '/user',
 			name: 'user',
 			components: {
-				header: UserHeader,
+				header: Header,
 				content: User,
 				footer: Footer
 			},
 			children: [{
-					path: 'login-up',
-					name: 'login-up',
-					component: LoginUp
-				},
-				{
 					path: 'login-in',
 					name: 'login-in',
-					component: LoginIn
+					components: {
+						header: Header,
+						content: LoginIn,
+						footer: Footer
+					}
 				},
 				{
 					path: 'register',
 					name: 'register',
-					component: Register
+					components: {
+						header: Header,
+						content: Register,
+						footer: Footer
+					}
 				},
 				{
 					path: 'login',

@@ -7,18 +7,20 @@
     padding: 0.06rem;
     @include flexbox();
     @include flex-direction(column);
-    figure {
+    @include overflow(hidden);
+    .mint-swipe {
         @include background-color(#fff);
-        @include rect(100%, auto);
         border: 1px solid #d4d4d4;
-        figcaption {
-            @include rect(100%, 0.3rem);
-            @include line-height(0.3rem);
-            @include flexbox();
-            @include justify-content(space-between);
-            border-bottom: 1px solid #d4d4d4;
-            span {
-                text-align: center;
+        border-top: 0;
+        @include rect(100%, 1.64rem);
+        .mint-swipe-indicators {
+            .mint-swipe-indicator {
+                opacity: 1;
+                @include background-color(#B1B1B1);
+            }
+            bottom: 2px;
+            .is-active {
+                @include background-color(#FE5306);
             }
         }
         ul {
@@ -29,19 +31,22 @@
             li {
                 @include rect(50%, auto) @include flexbox();
                 @include font-size(0.12rem);
-                border-top: 1px solid #d4d4d4;
+                border-bottom: 1px solid #d4d4d4;
                 border-right: 1px solid #d4d4d4;
                 padding: 0.06rem 0;
-                img {
+                >img {
                     margin: 0 0.06rem;
-                    @include rect(0.6rem, 0.6rem)
+                    @include rect(0.5rem, 0.5rem)
                 }
                 div {
                     @include flex();
                     p {
-                        &:first-child {}
+                        &:first-child {
+                            @include text-color(#333);
+                        }
                         &:last-child {
-                            @include text-color(#999)
+                            @include text-color(#999);
+                            @include font-size(0.12rem);
                         }
                     }
                 }
@@ -51,6 +56,28 @@
                 &:nth-child(1),
                 &:nth-child(2) {
                     border-top: 0;
+                }
+            }
+        }
+    }
+    figure {
+        @include background-color(#fff);
+        @include rect(100%, auto);
+        border: 1px solid #d4d4d4;
+        border-bottom: 0;
+        figcaption {
+            @include rect(100%, 0.4rem);
+            @include line-height(0.4rem);
+            @include flexbox();
+            @include justify-content(space-between);
+            border-bottom: 1px solid #d4d4d4;
+            padding: 0 0.04rem;
+            span {
+                text-align: center;
+                @include text-color(#333);
+                &:last-child {
+                    @include text-color(#999);
+                    @include font-size(0.12rem);
                 }
             }
         }
@@ -65,13 +92,12 @@
             @include rect(100%, 0.4rem);
             @include flexbox();
             @include align-items();
-            span{
+            span {
                 @include flex();
                 text-align: center;
                 border-right: solid 1px #d4d4d4;
-                @include rect(auto,0.24rem)
-                @include line-height(0.24rem);
-                &:last-child{
+                @include rect(auto, 0.24rem) @include line-height(0.24rem);
+                &:last-child {
                     bottom: 0;
                 }
             }
