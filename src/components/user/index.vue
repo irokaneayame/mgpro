@@ -1,7 +1,5 @@
 <template>
 	<div class="content">
-		我的内容
-		<hr />
 		<router-view></router-view>
 	</div>
 </template>

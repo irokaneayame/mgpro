@@ -2,3 +2,31 @@
 .router-link-active {
     @include text-color(#f66);
 }
+
+#app .content {
+    padding: 0.2rem;
+    @include background-color(#f7f7f7);
+    .mint-cell {
+        .mint-cell-wrapper {
+            .mint-cell-value {
+                .mint-field-core {
+                    @include font-size(0.12rem);
+                    background: #000;
+                    display: none;
+                }
+            }
+        }
+    }
+    .mint-button {
+        margin-top: 0.1rem;
+        margin-bottom: 0.06rem;
+        @include background-color(#fc9241);
+        @include text-color(#fff);
+        @include border-radius(0.06rem);
+    }
+    .tiao {
+        margin: 0.06rem;
+        @include text-color(#fc9241);
+        text-decoration: underline;
+    }
+}

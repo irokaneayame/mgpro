@@ -3,3 +3,12 @@
 .router-link-active{
     @include text-color(#f66);
 }
+.content{
+    .denglu{
+        @include rect(100%,auto)
+        div{
+            @include flexbox();
+            
+        }
+    }
+}

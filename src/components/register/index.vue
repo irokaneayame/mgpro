@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class='content'>
 		注册
 		<mt-field placeholder="手机号" type="tel" v-model="phone" :state="phoneState"></mt-field>
 		<mt-field placeholder="密码" type="password" v-model="password" :state="passwordState"></mt-field>

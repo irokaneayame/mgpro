@@ -15,6 +15,7 @@ import LoginIn from "@/components/login-in"
 import Register from "@/components/register"
 import Login from "@/components/login"
 import LoginHeader from "@/components/loginHeader"
+import RegisterHeader from "@/components/registerHeader"
 export default new Router({
 	routes: [{
 			path: "/",
@@ -67,6 +68,24 @@ export default new Router({
 
 		},
 		{
+			path: '/login',
+			name: 'login',
+			components: {
+				header: LoginHeader,
+				content: Login,
+				footer: Footer
+			}
+		},
+		{
+			path: '/register',
+			name: 'register',
+			components: {
+				header: RegisterHeader,
+				content: Register,
+				footer: Footer
+			}
+		},
+		{
 			path: '/user',
 			name: 'user',
 			components: {
@@ -75,29 +94,10 @@ export default new Router({
 				footer: Footer
 			},
 			children: [{
-					path: 'login-in',
-					name: 'login-in',
-					components: {
-						header: Header,
-						content: LoginIn,
-						footer: Footer
-					}
-				},
-				{
-					path: 'register',
-					name: 'register',
-					components: {
-						header: Header,
-						content: Register,
-						footer: Footer
-					}
-				},
-				{
-					path: 'login',
-					name: 'login',
-					component: Login
-				}
-			]
+				path: 'login-in',
+				name: 'login-in',
+				component: LoginIn
+			}]
 		},
 		{
 			path: '/detail/:goodsID',

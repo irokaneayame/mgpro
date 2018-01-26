@@ -1,9 +1,10 @@
 <template>
-	<div class="content">
-		<mt-field label="用户名" placeholder="请输入账号"></mt-field>
-		<mt-field label="密码" placeholder="请输入密码" type="password"></mt-field>
-		<button>登录</button>
+	<div class='content'>
+		<mt-field placeholder="请输入账号" type="tel" v-model='phone' :state="phoneState"></mt-field>
+		<mt-field placeholder="请输入密码" type="password" v-model="password" :state="passwordState"></mt-field>
+		<mt-button class="registerBtn" @click="login()" size="large">登&nbsp;&nbsp;&nbsp;&nbsp;录</mt-button>
+		<a class='tiao' href="/#/register">注&nbsp;册</a>
 	</div>
 </template>
 <script src="./script.js"></script>
-<style lang="scss" src="./style.scss"></style>
+<style scoped lang="scss" src="./style.scss"></style>

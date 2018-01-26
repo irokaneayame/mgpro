@@ -1,22 +1,26 @@
-
 export default {
-  data(){
-    return {
-    }
-  },
-  mounted(){
-    
-  },
-  methods:{
-    
-  },
-  computed:{
-    
-  },
-  components:{
-    
-  },
-  watch:{
-    
-  }
+	data() {
+		return {
+			name:''
+		}
+	},
+	mounted() {
+		var value = localStorage.getItem('username');
+		this.name = value
+	},
+	methods: {
+		quit() {
+			localStorage.removeItem('username');
+			this.$router.push('/home')
+		}
+	},
+	computed: {
+
+	},
+	components: {
+
+	},
+	watch: {
+
+	}
 }
