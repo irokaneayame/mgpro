@@ -2,7 +2,7 @@
 	<div class="content">
 		<section>
 			<ul>
-				<li v-for="(item,index) in list" :key="index">
+				<li v-for="item in list">
 					<img :src="item.ICON" />
 					<div>
 						<h1>{{item.GNAME}}({{item.PNAME}})</h1>
@@ -12,8 +12,7 @@
 					<a>领取</a>
 				</li>
 			</ul>
-			
-			<div>查看更多</div>
+			<div @click='addList' v-if='!isEnd'>查看更多</div>
 		</section>
 	</div>
 </template>
