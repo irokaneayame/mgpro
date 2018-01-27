@@ -10,7 +10,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -18,7 +18,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -26,7 +26,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -34,43 +34,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
-							<p>二次元手游</p>
-						</div>
-					</li>
-				</ul>
-			</mt-swipe-item>
-			<mt-swipe-item>
-				<ul>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -82,7 +46,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -90,7 +54,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -98,7 +62,7 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -106,7 +70,43 @@
 						<img src="./1.jpg" />
 						<div>
 							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png"/>
+							<img src="../../../static/img/ping.png" />
+							<p>二次元手游</p>
+						</div>
+					</li>
+				</ul>
+			</mt-swipe-item>
+			<mt-swipe-item>
+				<ul>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png" />
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png" />
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png" />
+							<p>二次元手游</p>
+						</div>
+					</li>
+					<li>
+						<img src="./1.jpg" />
+						<div>
+							<p>元气战姬少女</p>
+							<img src="../../../static/img/ping.png" />
 							<p>二次元手游</p>
 						</div>
 					</li>
@@ -117,18 +117,28 @@
 		<div class='game'>
 			<p class='tab'><span @click="change('kai')">开服表</span><span @click="change('xin')">新游榜</span></p>
 			<table v-if="tem == 'kai'">
-				<th>
-					<td>开服名称</td>
-					<td>开服时间</td>
-					<td>礼包</td>
-					<td>下载</td>
-				</th>
-				<tr>
-					<td>《大天使之剑》经典390服</td>
-					<td>1月22日</td>
-					<td>礼物</td>
-					<td>下载</td>
-				</tr>
+				<thead>
+					<tr>
+						<td>开服名称</td>
+						<td>开服时间</td>
+						<td>礼包</td>
+						<td>下载</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for='item in list'>
+						<td>{{item.TITLE}}</td>
+						<td>{{item.EXT1}}</td>
+						<td>礼物</td>
+						<td>
+							<a :href="item.EXT2">下载</a>
+						</td>
+					</tr>
+					
+				</tbody>
+				<tfoot>
+					<tr><td>加载更多</td></tr>
+				</tfoot>
 			</table>
 		</div>
 	</div>

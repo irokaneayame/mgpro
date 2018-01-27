@@ -7,7 +7,7 @@
     padding: 0.06rem;
     @include flexbox();
     @include flex-direction(column);
-    @include overflow(hidden);
+    @include rect(100%,auto);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
     .mint-swipe {
         @include background-color(#fff);
         border: 1px solid #d4d4d4;
@@ -86,7 +86,6 @@
         @include rect(100%, auto);
         border: 1px solid #d4d4d4;
         margin-top: 0.06rem;
-        margin-bottom: 0.2rem;
         @include background-color(#fff);
         .tab {
             @include rect(100%, 0.4rem);
@@ -105,29 +104,6 @@
         table {
             @include rect(100%, auto);
             @include font-size(0.12rem);
-            th {
-                @include rect(100%, 0.4rem);
-                @include flexbox();
-                @include line-height(0.4rem);
-                text-align: center;
-                border-top: solid 1px #d4d4d4;
-                @include text-color(#656565);
-                @include background-color(#d5d5d5);
-                td {
-                    &:first-child {
-                        @include flex();
-                    }
-                    &:nth-child(2) {
-                        padding: 0 14px;
-                    }
-                    &:nth-child(3) {
-                        padding: 0 14px;
-                    }
-                    &:last-child {
-                        padding: 0 14px;
-                    }
-                }
-            }
             tr {
                 @include rect(100%, 0.4rem);
                 @include flexbox();
@@ -145,6 +121,22 @@
                     }
                     &:last-child {
                         padding: 0 14px;
+                    }
+                }
+            }
+            thead {
+                tr {
+                    text-align: center;
+                    border-top: solid 1px #d4d4d4;
+                    @include text-color(#656565);
+                    @include background-color(#f5f5f5);
+                }
+            }
+            tfoot {
+                tr {
+                    td {
+                        text-align: center;
+                        @include rect(100%, 100%)
                     }
                 }
             }
