@@ -8,8 +8,8 @@ Vue.component(Button.name, Button);
 export default {
 	data() {
 		return {
-			phone: '18813007814',
-			password: 'abcdefg',
+			phone: '',
+			password: '',
 			phoneState: "",
 			passwordState: ""
 		}
@@ -50,17 +50,29 @@ export default {
 							case 4:
 								that.phoneState = '';
 								that.passwordState = '';
-								alert('未知原因报错')
+								Toast({
+									message: '服务器已关闭',
+									position: 'bottom',
+									duration: 2000
+								});
 								break;
 							default:
 								that.phoneState = 'success';
 								that.passwordState = 'success';
 								localStorage.setItem('username', that.phone);
+								Toast({
+									message: '登录成功',
+									position: 'bottom',
+									duration: 2000
+								});
 								that.$router.push('/home')
 						}
 					}).catch((error) => {
-						console.log(error)
-						alert('服务器可能在开小车')
+						Toast({
+							message: '服务器开小车',
+							position: 'bottom',
+							duration: 2000
+						});
 					})
 				}
 			}

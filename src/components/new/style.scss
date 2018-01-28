@@ -96,7 +96,8 @@
                 @include flex();
                 text-align: center;
                 border-right: solid 1px #d4d4d4;
-                @include rect(auto, 0.24rem) @include line-height(0.24rem);
+                @include rect(auto, 0.24rem);
+                @include line-height(0.24rem);
                 &:last-child {
                     bottom: 0;
                 }

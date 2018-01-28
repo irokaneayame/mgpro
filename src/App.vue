@@ -49,7 +49,7 @@
 					@include justify-content(center);
 					@include align-items(center);
 					.iconfont{
-						@include font-size(0.16rem)
+						@include font-size(0.18rem)
 					}
 				}
 			}

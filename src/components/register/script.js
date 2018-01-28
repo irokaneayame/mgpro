@@ -10,90 +10,122 @@ import { BASE_URL } from "@/common/base.js"
 export default {
 	data() {
 		return {
-			password: "abcdefg",
-			phone: "18813007814",
-			captcha: "1111",
+			password: "",
+			phone: "",
+			captcha: "",
 			phoneState: "",
 			passwordState: "",
-			msg: "发送验证码",
-			timer: "",
-			codeState: false,
-			registerState: "default"
+			aginpass: '',
+			aginState: '',
+			code: "",
+			arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f']
 		}
 	},
 	mounted() {
-
+		for(var i = 0; i < 4; i++) {
+			this.code += this.arr[Math.floor(Math.random() * this.arr.length)]
+		}
 	},
 	methods: {
-		validatePhone(phone) {
-			if(phone == "18813007814") {
-				this.phoneState = "success"
-			} else {
-				this.phoneState = "error"
+		changeCode() {
+			var str = '';
+			for(var i = 0; i < 4; i++) {
+				str += this.arr[Math.floor(Math.random() * this.arr.length)]
 			}
-		},
-		validatePassword(password) {
-			if(this.phone == "") {
-				this.phoneState = "error"
-			}
-			if(password == "abcdefg") {
-				this.passwordState = "success"
-			} else {
-				this.passwordState = "error"
-			}
-		},
-		sendCode() {
-			var num = 5;
-			clearInterval(this.timer);
-			this.timer = setInterval(() => {
-				if(num == 0) {
-					num = 5;
-					clearInterval(this.timer);
-					this.msg = "发送验证码";
-					this.codeState = false
-				} else {
-					this.msg = num + "s后重新发送";
-					this.codeState = true
-				}
-				num--;
-			}, 1000)
+			this.code = str;
 		},
 		register() {
 			var that = this;
 			if(this.phone == "") {
-				this.phoneState = "error"
+				this.phoneState = "error";
+				Toast({
+					message: '用户名不能为空',
+					position: 'bottom',
+					duration: 2000
+				});
 			} else {
 				if(this.password == "") {
-					this.passwordState = "error"
+					this.passwordState = "error";
+					Toast({
+						message: '密码不能为空',
+						position: 'bottom',
+						duration: 2000
+					});
 				} else {
-					if(this.captcha == "") {
+					console.log(this.aginpass)
+					if(this.aginpass == "") {
+						this.aginState = "error";
 						Toast({
-							message: '验证码不能为空',
+							message: '请确认密码',
 							position: 'bottom',
 							duration: 2000
 						});
 					} else {
-						var url = BASE_URL + "/api/register"
-						axios.post(url, {
-							phone: that.phone,
-							password: that.password
-						}).then((response) => {
-							switch(response.data) {
-								case 0:
-									console.log('用户名已重复')
-									that.phoneState = "error"
-									break;
-								case 1:
-									console.log('注册成功')
-									break;
-								default:
-									console.log('注册失败')
-									that.phoneState = "error"
+						if(this.captcha == "") {
+							Toast({
+								message: '验证码不能为空',
+								position: 'bottom',
+								duration: 2000
+							});
+						} else {
+							if(this.password == this.aginpass) {
+								this.aginState = "success";
+								if(this.captcha == this.code) {
+									var url = BASE_URL + "/api/register";
+									axios.post(url, {
+										phone: that.phone,
+										password: that.password
+									}).then((response) => {
+										switch(response.data) {
+											case 0:
+												Toast({
+													message: '用户名重复',
+													position: 'bottom',
+													duration: 2000
+												});
+												that.phoneState = "warning"
+												break;
+											case 1:
+												Toast({
+													message: '注册成功',
+													position: 'bottom',
+													duration: 2000
+												});
+												that.phoneState = "success"
+												that.passwordState = "success"
+												that.phoneState = "success"
+												this.$router.push('/login')
+												break;
+											default:
+												Toast({
+													message: '注册失败',
+													position: 'bottom',
+													duration: 2000
+												});
+												that.phoneState = "warning"
+										}
+									}).catch((error) => {
+										console.log(error)
+									})
+								} else {
+									Toast({
+										message: '验证码错误',
+										position: 'bottom',
+										duration: 2000
+									});
+								}
+							} else {
+								this.aginState = "error";
+								Toast({
+									message: '密码不一样',
+									position: 'bottom',
+									duration: 2000
+								});
 							}
-						}).catch((error) => {
-							console.log(error)
-						})
+
+						}
 					}
+
 				}
 			}
 		}
@@ -105,17 +137,6 @@ export default {
 
 	},
 	watch: {
-		phone(newVal, oldVal) {
-			if(newVal == "") {
-				this.registerState = "default"
-			} else {
-				this.registerState = "primary"
-				this.validatePhone(newVal)
-			}
-
-		},
-		password(newVal, oldVal) {
-			this.validatePassword(newVal)
-		}
+		
 	}
 }
