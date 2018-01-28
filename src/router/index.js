@@ -22,10 +22,6 @@ export default new Router({
 			redirect: "/home"
 		},
 		{
-			path: "/kind",
-			redirect: "/kindlist/20008833"
-		},
-		{
 			path: '/home',
 			name: 'home',
 			components: {
@@ -41,20 +37,6 @@ export default new Router({
 				header: Header,
 				content: Kind,
 				footer: Footer
-			}
-		},
-		{
-			path: '/kindlist/:classID',
-			name: 'kindlist',
-			components: {
-				header: Header,
-				content: Kind,
-				footer: Footer
-			},
-			props: {
-				header: false,
-				content: true,
-				footer: false
 			}
 		},
 		{

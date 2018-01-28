@@ -1,113 +1,17 @@
 <template>
 	<div class="new">
 		<figure>
-			<figcaption><span>今日推荐</span><span class='more'>查看全部></span></figcaption>
+			<figcaption><span>今日推荐</span><span class='more' @click='chan("more")'>查看全部></span></figcaption>
 		</figure>
 		<mt-swipe :auto="4000">
-			<mt-swipe-item>
+			<mt-swipe-item v-for='(a,b) in lenth' :key='b'>
 				<ul>
-					<li>
-						<img src="./1.jpg" />
+					<li v-for='(item,index) in gamelist' :key='index' v-if='index>=b*4&&index<b*4+4' @click='chan(index)'>
+						<img :src="item.ICON_URL" />
 						<div>
-							<p>元气战姬少女</p>
+							<p>{{item.NAME}}</p>
 							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-				</ul>
-			</mt-swipe-item>
-			<mt-swipe-item>
-				<ul>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-				</ul>
-			</mt-swipe-item>
-			<mt-swipe-item>
-				<ul>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
-						</div>
-					</li>
-					<li>
-						<img src="./1.jpg" />
-						<div>
-							<p>元气战姬少女</p>
-							<img src="../../../static/img/ping.png" />
-							<p>二次元手游</p>
+							<p>{{item.DESCRI}}</p>
 						</div>
 					</li>
 				</ul>
@@ -121,25 +25,39 @@
 					<tr>
 						<td>开服名称</td>
 						<td>开服时间</td>
-						<td>礼包</td>
 						<td>下载</td>
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for='item in list'>
+					<tr v-for='item in giftlist'>
 						<td>{{item.TITLE}}</td>
 						<td>{{item.EXT1}}</td>
-						<td>礼物</td>
 						<td>
 							<a :href="item.EXT2">下载</a>
 						</td>
 					</tr>
-					
 				</tbody>
-				<tfoot>
-					<tr><td>加载更多</td></tr>
+				<tfoot v-if='!isEnd'>
+					<tr>
+						<td @click="load">加载更多</td>
+					</tr>
 				</tfoot>
 			</table>
+			<ul v-if="tem == 'xin'">
+				<li v-for='(item,index) in gamelist' :key='index' v-if='index<10'>
+					<p class='lag' :style="'background-color:'+bianse(index)">
+						<span :style="'color:'+textcolor(index)">{{index+1}}</span>
+						<i></i>
+					</p>
+					<img :src="item.ICON_URL" />
+					<div>
+						<p>{{item.NAME}}</p>
+						<img src="../../../static/img/ping.png" />
+						<p>{{item.DESCRI}}</p>
+					</div>
+					<a :href='item.DL'>下载</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </template>

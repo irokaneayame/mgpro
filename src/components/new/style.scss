@@ -5,10 +5,8 @@
 
 .new {
     padding: 0.06rem;
-    @include flexbox();
-    @include flex-direction(column);
-    @include rect(100%,auto);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
     .mint-swipe {
+        height: 100px;
         @include background-color(#fff);
         border: 1px solid #d4d4d4;
         border-top: 0;
@@ -41,6 +39,9 @@
                 div {
                     @include flex();
                     p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                         &:first-child {
                             @include text-color(#333);
                         }
@@ -116,9 +117,6 @@
                     &:nth-child(2) {
                         padding: 0 14px;
                     }
-                    &:nth-child(3) {
-                        padding: 0 14px;
-                    }
                     &:last-child {
                         padding: 0 14px;
                     }
@@ -137,6 +135,66 @@
                     td {
                         text-align: center;
                         @include rect(100%, 100%)
+                    }
+                }
+            }
+        }
+        ul {
+            @include rect(100%, auto);
+            padding: 0 0.06rem;
+            li {
+                padding: 0.1rem 0;
+                @include rect(100%, auto);
+                border-top: 1px solid #d4d4d4;
+                @include flexbox();
+                @include align-items();
+                >img {
+                    margin: 0 0.06rem;
+                    @include rect(0.5rem, 0.5rem);
+                    margin-right: 0.1rem;
+                }
+                div {
+                    @include flex();
+                    p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        &:first-child {
+                            @include text-color(#333);
+                        }
+                        &:last-child {
+                            @include text-color(#999);
+                            @include font-size(0.12rem);
+                        }
+                    }
+                }
+                a {
+                    display: block;
+                    @include rect(0.74rem, 0.3rem);
+                    @include background-color(#81cd65);
+                    @include text-color(#fff);
+                    text-align: center;
+                    @include line-height(0.3rem);
+                }
+                .lag {
+                    @include rect(0.24rem, 0.46rem);
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include background-color(#e65022);
+                    margin-right: 0.1rem;
+                    span {
+                        display: block;
+                        @include text-color(#fff);
+                        text-align: center;
+                        @include rect(auto, 0.36rem);
+                        @include line-height(0.36rem);
+                        @include font-size(0.16rem);
+                    }
+                    i {
+                        display: block;
+                        border-style: solid;
+                        border-color: transparent transparent #fff transparent;
+                        border-width: 0 12px 10px 12px;
                     }
                 }
             }

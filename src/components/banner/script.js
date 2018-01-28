@@ -6,10 +6,12 @@ Vue.component(SwipeItem.name, SwipeItem);
 export default {
 	data() {
 		return {
-			 
+			 img:['../../../static/img/1512466928480067.jpg']
 		}
 	},
-	mounted() {},
+	mounted() {
+		
+	},
 	methods: {
 
 	},
