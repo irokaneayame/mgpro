@@ -83,30 +83,22 @@
                 &:last-child{
                     border: 0;
                 }
-                img {
+                >img {
                     @include rect(0.6rem, 0.6rem);
+                    margin-right: 0.06rem;
                 }
-                div {
+               div {
                     @include flex();
-                    @include rect(100%, auto);
-                    h1 {
-                        @include line-height(0.5rem);
-                        @include font-size(0.2rem);
-                        text-indent: 0.05rem;
-                        @include ellipsis(1.8rem,1)
-                    }
                     p {
-                        @include text-color(#666);
-                        @include font-size(0.12rem);
-                        @include line-height(0.3rem);
-                        width: 3rem;
-                        @include ellipsis(1.8rem,1)
-                        span {
-                            @include border(0 0 0 1px, #333);
-                            padding: 0 5px;
-                            &:first-child {
-                                @include border(0, #fff);
-                            }
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        &:first-child {
+                            @include text-color(#333);
+                        }
+                        &:last-child {
+                            @include text-color(#999);
+                            @include font-size(0.12rem);
                         }
                     }
                 }

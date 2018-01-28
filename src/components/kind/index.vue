@@ -23,9 +23,10 @@
           <li v-for="(item,index) in list" :key="index">
             <img :src="item.ICON_URL" />
             <div>
-              <h1>{{item.NAME}}</h1>
-              <p><span>{{item.DESCRI}}</span></p>
-            </div>
+							<p>{{item.NAME}}</p>
+							<img src="../../../static/img/ping.png" />
+							<p>{{item.DESCRI}}</p>
+						</div>
             <a :href="item.DL">下载</a>
           </li>
         </ul>
