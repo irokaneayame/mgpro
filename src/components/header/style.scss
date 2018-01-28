@@ -8,4 +8,19 @@ header {
         @include rect(1.2rem, auto);
         margin-left: 0.2rem;
     }
+    .gong {
+        @include text-color(#FB9143);
+        position: relative;
+        @include flexbox();
+        @include justify-content();
+        @include align-items();
+        .iconfont {
+            @include font-size(0.36rem);
+            margin: 0 0.04rem;
+        }
+        .icon-wo {
+            @include text-color(#FB9143);
+            @include font-size(0.28rem)
+        }
+    }
 }

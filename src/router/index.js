@@ -9,8 +9,6 @@ import Gift from "@/components/gift"
 import User from "@/components/user"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import UserHeader from "@/components/userHeader"
-import DetailFooter from "@/components/detailFooter"
 import LoginIn from "@/components/login-in"
 import Register from "@/components/register"
 import Login from "@/components/login"
@@ -80,15 +78,6 @@ export default new Router({
 				name: 'login-in',
 				component: LoginIn
 			}]
-		},
-		{
-			path: '/detail/:goodsID',
-			name: 'detail',
-			components: {
-				header: UserHeader,
-				content: User,
-				footer: DetailFooter
-			}
 		}
 	]
 })

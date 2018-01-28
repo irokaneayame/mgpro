@@ -1,6 +1,7 @@
 @import "~@/lib/reset.scss";
 .banner {
     @include border(1px, #666);
+    height: 1.42rem;
     .mint-swipe {
         .mint-swipe-items-wrap {
             .mint-swipe-item {
@@ -10,10 +11,12 @@
             }
         }
         .mint-swipe-indicators {
-            bottom: 0;
+            bottom: 0.05rem;
             left: auto;
             right: 0;
             .mint-swipe-indicator {
+                width: 0.08rem;
+                height: 0.08rem;
                 opacity: 1;
                 @include background-color(#B1B1B1);
             }
