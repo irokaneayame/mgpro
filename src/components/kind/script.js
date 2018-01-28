@@ -77,12 +77,6 @@ export default {
     },
     showTheme() {
       this.themePop = true
-    },
-    checkType(){
-    	this.typePop = false;
-    },
-    checkTheme(){
-    	this.themePop = false;
     }
   },
   computed: {
@@ -105,14 +99,29 @@ export default {
 
   },
   watch: {
-  	typeText(oldVal,newVal){
+  	typeText(newVal,oldVal){
   		this.config.arr_type.map((item,index)=>{
   			if(item.text===newVal){
-  				console.log(item)
   				this.searchOpt.type=item.id;
-  				this.getList()
   			}
   		})
+  		if(newVal=="全部"){
+  			this.searchOpt.type=0
+  		}
+  		this.getList()
+  		this.typePop=false
+  	},
+  	themeText(newVal,oldVal){
+  		this.config.arr_theme.map((item,index)=>{
+  			if(item.text===newVal){
+  				this.searchOpt.theme=item.id;
+  			}
+  		})
+  		if(newVal=='全部'){
+  			this.searchOpt.theme=0
+  		}
+  		this.getList()
+  		this.themePop=false
   	}
   }
 }
